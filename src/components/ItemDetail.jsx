@@ -1,6 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
+import ItemCount from "./ItemCount";
+import {Link} from 'react-router-dom'
+import { useCartContext } from "../Context/CartContext";
+
 
 export const ItemDetail = ({data}) => {
+    const [goToCart, setGoToCart] = useState(false);
+    const {addProduct} = useCartContext();
+
+    const onAdd = (quantity) => {
+        setGoToCart(true);
+        addProduct(data, quantity);
+    }
+
+
+
     return ( 
         <div className="card" style={{ width: "20rem" }}>
             <img className="card-img-top" src={data.img} alt="Card image cap" />
@@ -12,9 +26,14 @@ export const ItemDetail = ({data}) => {
             <div key={data.id} className="CardProduct">
                 <div  className="cardInfo">
                     <p className="textCategory">{data.category}</p>
+                </div>
             </div>
-            </div>
-            {/* <ItemCount stock={props.Item.stock} initial={0} onAdd={onAdd}/> */}
+            {
+                goToCart 
+                ? <Link to='/cart'>Ir al carrito</Link>
+                : <ItemCount stock={data.stock} initial={0} onAdd={onAdd}/>
+            }
+            
         </div>
      );
 }

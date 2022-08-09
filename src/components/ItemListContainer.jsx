@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import ItemCount from "./ItemCount";
 import Title from "./title";
 import ItemList from './ItemList';
+import {useParams} from 'react-router-dom';
 
 
 
@@ -199,24 +199,27 @@ const Database = [{
 export const ItemListContainer = ({texto}) => {
     const [data, setData] = useState([]);
 
+    const {categoryId} = useParams();
+
     useEffect(() => {
         const getData = new Promise(resolve => {
             setTimeout(() => {
             resolve(Database);
-        },2000);
+        },1500);
         });
-        getData.then(res => setData(res))
+        if(categoryId) {
+            getData.then(res => setData(res.filter(product => product.category === categoryId)));
+        }else {
+            getData.then(res => setData(res)) 
+        }
 
+    },[categoryId])
 
-    },[])
-
-    const onAdd = (quantity) => {
-        console.log(`Compraste ${quantity} unidades`)
-    }
+    
     return ( 
         <>
         <Title greeting={texto}/>
-        <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+        
         <ItemList data={data}/>
         </>
      );
