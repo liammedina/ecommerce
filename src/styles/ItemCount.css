@@ -1,0 +1,42 @@
+/* .containerCount{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: center;
+    height: 30vh;
+    width: 40vw;
+    position: relative;
+    background-color: #ffebd3;
+    margin-left: 26vw;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px whitesmoke;
+}
+.textCount{
+    font-size: 1.5em;
+    font-family: 'Lexend Tera';
+    text-shadow: 2px 2px 5px;
+    margin-top: 1em;
+}
+.buttonItem{
+    border: none;
+    width: 8vw;
+    height: 4vh;
+    border-radius: 10px;
+    background-color: #ffebd3;
+    font-family: 'Lexend Tera';
+    font-size: 1.5em;
+}
+.counter{
+    font-family: 'Lexend Tera';
+    font-size: 1.5em;
+}
+.addButton{
+    border: none;
+    margin-bottom: 1em;
+    background-color: #264e70;
+    font-family: 'Lexend Tera';
+    font-size: 1em;
+    border-radius: 5px;
+    color: whitesmoke;
+    box-shadow: 2px 2px 5px black;
+} */
