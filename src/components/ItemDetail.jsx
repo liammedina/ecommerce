@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import ItemCount from "./ItemCount";
 import {Link} from 'react-router-dom'
 import { useCartContext } from "../Context/CartContext";
+import {getFirestore, doc, getDoc} from "firebase/firestore"
+    
 
 
 export const ItemDetail = ({data}) => {
@@ -12,8 +14,6 @@ export const ItemDetail = ({data}) => {
         setGoToCart(true);
         addProduct(data, quantity);
     }
-
-
 
     return ( 
         <div className="card" style={{ width: "20rem" }}>
