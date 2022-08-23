@@ -1,16 +1,21 @@
 import React, {useState, useContext} from "react";
+import {addDoc, collection, getFirestore, updateDoc, doc} from "firebase/firestore"
+
 export const useCartContext = () => useContext(CartContext);
 
 const CartContext = React.createContext([]);
 
-
 const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
 
-    const addProduct = (item, newQuantity) =>{
-        const newCart = cart.filter(prod => prod.id !== item.id)
-        newCart.push({ ...item, quantity: newQuantity});
-        setCart(newCart);
+    const addProduct = (item, quantity) =>{
+        if (isInCart(item.id)) {
+            setCart(cart.map(product => {
+                return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product
+            }));
+        }else {
+            setCart([...cart, {...item, quantity}]);
+        }
     }
 
     const totalPrice = () => {
@@ -18,16 +23,12 @@ const CartProvider = ({children}) => {
     }
 
     const totalProducts = () => cart.reduce((accumulator, currentProduct) => accumulator + currentProduct.quantity, 0)
-
     
     const clearCart = () => setCart([]);
 
-    const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
+    const isInCart = (id) => cart.find(product => product.id === id);
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
-
-
-
 
     return ( 
         <CartContext.Provider value= {{

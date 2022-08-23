@@ -1,7 +1,8 @@
 import React, {useEffect, useState}from "react";
 import ItemDetail from "./ItemDetail";
 import {useParams} from 'react-router-dom';
-import {getFirestore, doc, getDoc} from "firebase/firestore"
+import {getFirestore, doc, getDoc} from "firebase/firestore";
+
 
 
 export const ItemDetailContainer = () => {
@@ -17,7 +18,9 @@ export const ItemDetailContainer = () => {
     }, [detailId])
 
     return ( 
-        <ItemDetail data = {data}/>
+        <div className="ItemDetail">
+            <ItemDetail data = {data}/>
+        </div>
      );
 }
  

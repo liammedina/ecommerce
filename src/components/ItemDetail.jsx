@@ -3,9 +3,8 @@ import ItemCount from "./ItemCount";
 import {Link} from 'react-router-dom'
 import { useCartContext } from "../Context/CartContext";
 import {getFirestore, doc, getDoc} from "firebase/firestore"
+import '../styles/ItemDetail.css'
     
-
-
 export const ItemDetail = ({data}) => {
     const [goToCart, setGoToCart] = useState(false);
     const {addProduct} = useCartContext();

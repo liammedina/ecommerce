@@ -1,12 +1,20 @@
+.navBar{
+  
+  position: relative;
+}
+.videoIndex{
+  width: 99vw;
+  z-index: -1;
+  position: relative;
+}
 .App-nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100vw;
+    width: 99vw;
     font-family: 'Lexend Tera';
     color: #5b5c5e;
-    padding: 20px;
-    align-content: center;
+    z-index: 2;
+    align-items: flex-start;
   }
   .parrafo {
     font-size: 25px ;
@@ -14,16 +22,19 @@
     margin: 0 20px 0 0 ;
   }
   .App-items {
-    width: 100vw;
+    height: 10vh;
+    width: 80vw;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-content: space-around;
-    align-items: center;
+    align-content: center;
     margin: 0 5px 0 5ps;
+    padding-top: 5px;
     list-style: none;
+    align-items: center;
   }
- 
   .link{
     cursor: pointer;
+    text-decoration: none;
+    color: rgb(48, 47, 47);
   }
