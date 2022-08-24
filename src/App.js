@@ -8,7 +8,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CartProvider from './Context/CartContext';
 import Contact from './components/Contact'
 import Home from './components/Home';
-import Form from './components/form';
+import Formulario from './components/Formulario';
 import Boutique from './components/Boutique';
 
 
@@ -18,14 +18,14 @@ function App() {
     <BrowserRouter>
         <CartProvider>
           <NavBar/>
-          <Routes className='ItemDetail'>
+          <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/Store' element={<ItemListContainer />}/>
             <Route path='/category/:categoryId' element={<ItemListContainer />}/>
             <Route path='/cart' element={<Cart />}/>
             <Route path='/detail/:detailId' element={<ItemDetailContainer />}/>
             <Route path='/Contact' element={<Contact />}/>
-            <Route path='./Form' element={<Form/>}/>
+            <Route path='./Formulario' element={<Formulario/>}/>
             <Route path='./Boutique' element={<Boutique/>}/>
           </Routes>  
         </CartProvider>

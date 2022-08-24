@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../Context/CartContext";
 import ItemCart from "./ItemCart";
-import {addDoc, collection, getFirestore, updateDoc, doc, getDoc} from "firebase/firestore"
+import {addDoc, collection, getFirestore} from "firebase/firestore"
 import '../styles/Cart.css'
 
 
@@ -34,26 +34,65 @@ const Cart = () => {
             </>
         )
     }
-    // const updateStock = async (itemList) => {
-    //     const db = getFirestore();
-    //     itemList.forEach(async(item) => {
-    //         const orderDoc = doc(collection(db, 'items'), item.id);
-    //         const dbItem = await getDoc(orderDoc);
-    //         const dbBody = dbItem.data();
-    //         const newStock = dbBody.stock - item.quantity;
-    //         console.log(item.title, newStock);
-    //         updateDoc(orderDoc, {stock: newStock});
-    //     })
-    // }
-
     
     return ( 
         <div className="cart">
             {cart.map(product => <ItemCart key={product.id} product={product} />)} 
             <p>Total: $ {totalPrice()}</p>
-            <Link to={'./Form'}><button onClick={handleClick}>Finalizar Compra</button></Link>
+            <Link to='/Formulario' ><button onClick={handleClick}>Finalizar Compra</button></Link>
         </div>
      );
-}
- 
-export default Cart;
+    }
+     export default Cart;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     const {cart, totalPrice, removeProduct} = useCartContext();
+//     if (cart.length === 0) {
+//     return(
+//         <>
+//             <p>No hay elementos en el Carrito</p>
+//             <Link to={'/'}>Hacer Compras</Link>
+//         </>
+//     )
+//     }
+//     return(
+//         <>
+//                 <h2>Carrito de Compras</h2>
+//                 <br />
+//                 <ul>
+//                     {cart.map((product, key) =>{
+//                         return(
+//                             <div className="shoppingLlist" key={key}>
+//                                 <img src={product.img} alt={product.title} className="imgCarrito" />
+//                                 <li><Link to={`/item/${product.id}`}>{product.title}</Link></li>
+//                                 <li>x{product.quantity}</li>
+//                                 <li>Subtotal: {product.price * product.quantity}</li>
+//                                 <button className="removeProduct" onClick={()=> removeProduct(product.id)}>&times;</button>
+
+//                             </div>
+//                         )
+//                     })}
+//                 </ul>
+//                 <h3>{`El total de la compra es de: $ ${totalPrice()}`}</h3>
+//                 <br />
+//                 <Link to='/Formulario' className="btn btn-primary">Terminar Compra</Link>
+
+//             </>
+// )
+
+

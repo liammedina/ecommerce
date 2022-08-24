@@ -1,11 +1,12 @@
 .navBar{
   
-  position: relative;
+  position: absolute;
 }
 .videoIndex{
   width: 99vw;
   z-index: -1;
   position: relative;
+  margin-top: -15vh;
 }
 .App-nav {
     display: flex;

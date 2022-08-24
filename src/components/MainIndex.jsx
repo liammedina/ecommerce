@@ -1,22 +1,20 @@
 import React from "react";
-import img0b from '../Images/img0b.webp'
-import img0 from '../Images/img0.webp'
+import {Link} from 'react-router-dom'
 import '../styles/MainIndex.css'
 
 
-const MainIndex = () => {
+const MainIndex = (data) => {
     return ( 
-        <div className="MainIndex">
-            <div className="card1">
-                <div className="textoCard">
-                    <figcaption>Bandolera <span class="h2Portada">Auror</span></figcaption>
-                    <p className="pPortada">Cuero de ternero liso de grano completo</p>
-                </div>
-                <img src={img0b} alt="Bandolera Auror" className="imge-fluid imgCardPortadaA"/>
-                <img src={img0} alt="Bandolera Auror" class="imge-fluid imgCardPortadaB"/>
-            </div>
-
+        <div className="card1">
+        <div className="textoCard">
+            <figcaption>Número <span className="h2Portada">Uno</span></figcaption>
+            <p className="pPortada">Cuero de ternero granulado de grano completo</p>
         </div>
+        <img src="https://cdn.shopify.com/s/files/1/0009/5063/2505/products/NUMERO_UN_DAUPHIN_1382000x2800px_1000x1400.jpg?v=1642432379" alt="Cartera Numero Nueve" class="imge-fluid imgCardPortada"></img>
+    </div>
+        
+
+
      );
 }
  

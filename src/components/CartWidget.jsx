@@ -9,7 +9,7 @@ export const CartWidget = () => {
     return ( 
         <>
             <img src={shoppingCart} alt="" /> 
-            <span>{totalProducts() || ''} </span>
+            <span className="span">{totalProducts() || ''} </span>
         </>
     );
 }
