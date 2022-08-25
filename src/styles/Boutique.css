@@ -1,3 +1,5 @@
-.Boutique{
-    height: 80vh;
+.boutique{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
