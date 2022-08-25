@@ -5,7 +5,7 @@
 .form{
     display: flex;
     flex-direction: column;
-    width: 20vw;
+    width: 30vw;
     margin-top: 7px;
     align-content: center;
     align-items: center;
@@ -32,5 +32,6 @@
     text-shadow: 2px 2px 2px grey;
 } 
 .btn-outline-success{
-    margin-top: 2vh;
+    margin: 2vh 0 20vh 45%;
+    
 }
