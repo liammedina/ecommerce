@@ -7,7 +7,7 @@ import '../styles/Item.css'
 const Item = ({info}) => {
 
     return(
-        <div href="" className="card" style={{width: "17rem"}}>
+        <div href="" className="card" style={{width: "17rem", margin:'5vh'}}>
             <img className="card-img-top" src={info.img} alt="" />
             <div  className="card-body d-flex flex-column justify-content-center">
                 <h4  className="card-title">{info.title}</h4>

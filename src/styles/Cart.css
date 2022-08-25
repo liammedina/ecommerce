@@ -1,3 +1,36 @@
-.btn{
-    
+.card{
+    box-shadow:  20px 20px 60px #858484,
+             -20px -20px 60px #ffffff;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    margin-top: 7px;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 16vh;
+}
+.total{
+    margin: 2rem 37vw;
+    font-family: 'Lexend Tera';
+    width: 60vw;
+}
+.emplyCart{
+    font-family: 'Montserrat Alternates', sans-serif;
+    height: 61vh;
+    width: 98vw;
+    padding: 25vh 35vw;
+    text-align: center;
+    margin-bottom: 23vh;
+}
+.goToShop{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(43, 42, 42);
+    text-shadow: 2px 2px 2px grey;
+} 
+.btn-outline-success{
+    margin-top: 2vh;
 }

@@ -7,7 +7,8 @@ import '../styles/Cart.css'
 
 
 const Cart = () => {
-    const {cart, totalPrice} = useCartContext();
+        
+    const {cart, setCart, totalPrice, clearCart, isInCart, removeProduct, addProduct, totalProducts, sendOrder } = useCartContext();
     
     const order = {
         buyer: {
@@ -17,7 +18,7 @@ const Cart = () => {
             address: 'zaraza 1235'
         },
         items: cart.map(product => ({id: product.id, title: product.title, price: product.price, quantity: product.quantity })),
-        total: totalPrice(),
+        total: totalPrice,
     }
     const handleClick = () => {
         const db = getFirestore();
@@ -28,20 +29,33 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return(
-            <>
-                <p>No hay elementos en el Carrito</p>
-                <Link to={'/'}>Hacer Compras</Link>
-            </>
+            <div className="emplyCart">
+                <p className="goToShop">No hay elementos en el Carrito</p>
+                <Link to='/'  className="goToShop"> Hacer Compras</Link>
+            </div>
         )
     }
     
-    return ( 
-        <div className="cart">
+        return ( 
+            <>
             {cart.map(product => <ItemCart key={product.id} product={product} />)} 
-            <p>Total: $ {totalPrice()}</p>
-            <Link to='/Formulario' ><button onClick={handleClick}>Finalizar Compra</button></Link>
-        </div>
-     );
+            <h2 className="total" >Total: $ {totalPrice()}</h2>
+            
+            <form  className="form">
+                      <h2>Ingrese sus Datos:</h2>
+                      <label htmlFor="name" className="renglon">Nombre Completo</label>
+                      <input type="text" name="name" id="name" placeholder="Nombre y Apellido" className="renglon"/>
+
+                      <label htmlFor="tel" className="renglon" > Telefono </label>
+                      <input type="tel" name="tel" id="tel" placeholder="11-xxxx-xxxx" className="renglon" />
+
+                      <label htmlFor="email" className="renglon">Email</label>
+                      <input type="email" name="email" id="email"vplaceholder="you@example.com" className="renglon" />
+
+                      <button type="submit" onClick={handleClick} className="btn btn-outline-success" > Finalizar Compra </button>
+                    </form>
+            </>
+         );
     }
      export default Cart;
 

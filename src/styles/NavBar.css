@@ -1,5 +1,4 @@
 .navBar{
-  
   position: absolute;
 }
 .videoIndex{
@@ -7,6 +6,7 @@
   z-index: -1;
   position: relative;
   margin-top: -15vh;
+  margin-bottom: -5vh;
 }
 .App-nav {
     display: flex;
@@ -38,4 +38,8 @@
     cursor: pointer;
     text-decoration: none;
     color: rgb(48, 47, 47);
+    
+  }
+  .dropdown{
+    background-color: none;
   }

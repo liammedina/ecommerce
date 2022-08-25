@@ -1,7 +1,10 @@
 .ItemDetail{
     display: flex;
     flex-direction: row;
-
     margin-top: 15vh;
+    padding-bottom: 15vh;
     
+}
+.ItemListContainer{
+    padding-bottom: 15vh;
 }

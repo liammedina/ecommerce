@@ -15,23 +15,23 @@ export const ItemDetail = ({data}) => {
 
     return ( 
         <div className="detailList">
-            <div className="card">
-                <img className="card-img-top" src={data.img} alt="Card image cap" />
-                <div className="card-body d-flex flex-column justify-content-center">
-                        <h5 className="card-title">{data.title}</h5>
-                        <p className="textDescription">{data.description}</p>
+            <div className="cardDetail">
+                <img className="card-img" src={data.img} alt= ""/>
+                <div className="">
+                    <h5 className="card-title">{data.title}</h5>
+                    <p className="textDescription">{data.description}</p>
                     <h4>${data.price}</h4>
                     <div key={data.id} className="CardProduct">
                         <div  className="cardInfo">
                             <p className="textCategory">{data.category}</p>
                         </div>
                     </div>
-                </div>
                 {
                     goToCart 
-                    ? <Link to='/cart'>Ir al carrito</Link>
+                    ? <Link to='/cart' className="goToCart">Ir al carrito</Link>
                     : <ItemCount stock={data.stock} initial={0} onAdd={onAdd}/>
                 }
+                </div>
                 
             </div>
         </div>

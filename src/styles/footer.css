@@ -1,0 +1,8 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    width: 98vw;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: -15vh;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useCartContext } from "../Context/CartContext";
+
 import "../styles/ItemCart.css"
 
 
@@ -9,12 +10,12 @@ const ItemCart = ({product}) => {
     return ( 
         <div className="itemCart">
             <img src= {product.img} alt={product.title} />
-            <div>
+            <div className="itemCartDos">
                 <p>Título: {product.title}</p>
                 <p>Cantidad: {product.quantity}</p>
                 <p>Precio por unidad: ${product.price}</p>
-                <p>SUBTOTAL: ${product.quantity * product.price}</p>
-                <button onClick={() => removeProduct(product.id)}>ELIMINAR</button>
+                <h6 className="subtotal">SUBTOTAL: ${product.quantity * product.price}</h6>
+                <button className="btn btn-danger" onClick={() => removeProduct(product.id)}>ELIMINAR</button>
             </div>
         </div>
      );

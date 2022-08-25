@@ -1,7 +1,29 @@
-.ItemDetail{
-    margin-left: 30vw;
+.ItemDetail {
+    margin-left: 15vw;
+    border: solid 1px grey;
+    border-radius: 15px;
+    width: 70vw;
+    height: 45vh;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin-bottom: 24vh;
+    padding-top: 5vh;
     
 }
-.detailList{
+.cardDetail{
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    
+}
+.card-img{
+    height: 200px;
+}
+.textDescription{
     width: 50vw;
+}
+.goToCart{
+    text-decoration: none;
+    font-size: 2rem;
+    color: rgb(24, 23, 23);
+    text-shadow: 2px 2px 2px grey;
 }

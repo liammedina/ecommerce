@@ -17,18 +17,18 @@ export const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav  className="App-items">
-                <Nav.Link href='/store' className="link">STORE</Nav.Link>
-                    <NavDropdown title="PRODUCTOS" id="basic-nav-dropdown" className="link">
-                        <NavDropdown.Item href='/category/Bandolera' className="link">Bandoleras</NavDropdown.Item>
-                        <NavDropdown.Item href='/category/Bolso' className="link">Bolsos</NavDropdown.Item>
-                        <NavDropdown.Item href='/category/Cinturon' className="link">Cintos</NavDropdown.Item>
-                        <NavDropdown.Item href='/category/Bolso Mini' className="link">Bolso Mini</NavDropdown.Item>
-                        <NavDropdown.Item href='/category/Cartera' className="link">Cartera</NavDropdown.Item>
-                        <NavDropdown.Item href='/category/Billetera' className="link">Billetera</NavDropdown.Item>
+                <NavLink to='/store' className="link">STORE</NavLink>
+                    <NavDropdown title="PRODUCTOS" className="dropdown">
+                        <li><NavLink to='/category/Bandolera' className="link">Bandoleras</NavLink></li>
+                        <li><NavLink to='/category/Bolso' className="link">Bolsos</NavLink></li>
+                        <li><NavLink to='/category/Cinturon' className="link">Cintos</NavLink></li>
+                        <li><NavLink to='/category/Bolso Mini' className="link">Bolso Mini</NavLink></li>
+                        <li><NavLink to='/category/Cartera' className="link">Cartera</NavLink></li>
+                        <li><NavLink to='/category/Billetera' className="link">Billetera</NavLink></li>
                     </NavDropdown>
-                    <Nav.Link href='/'><img src={logosmall} alt="" className="logoNavBar"/></Nav.Link>
-                    <Nav.Link href='/Boutique' className="link">BOUTIQUE</Nav.Link>
-                    <Nav.Link href='/Contact' className="link">CONTACTO</Nav.Link>
+                    <NavLink to='/'><img src={logosmall} alt="" className="logoNavBar"/></NavLink>
+                    <NavLink to='/Boutique' className="link">BOUTIQUE</NavLink>
+                    <NavLink to='/Contact' className="link">CONTACTO</NavLink>
                     <NavLink to='/Cart'><CartWidget/></NavLink>
                 </Nav>
                 </Navbar.Collapse>
@@ -36,16 +36,6 @@ export const NavBar = () => {
         </Navbar>
     )
         
-            // <nav className="App-nav">
-            //     <ul className="App-items">
-            //         <li><NavLink to='/store' className="link">STORE</NavLink></li>
-            //         <li><NavLink to='/category/Bandolera' className="link">BANDOLERAS</NavLink></li>
-            //         <NavLink to='/'><img src={logosmall} alt="" className="logoNavBar"/></NavLink>
-            //         <li><NavLink to='/category/Bolso'  className="link">BOLSOS</NavLink></li>
-            //         <li><NavLink to='/Contact' className="link">CONTACTO</NavLink></li>
-            //         <NavLink to='/Cart'><CartWidget/></NavLink>
-            //     </ul>
-            // </nav> 
         
      
 }
